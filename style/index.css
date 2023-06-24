@@ -1,0 +1,75 @@
+/*Awesome imports*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    text-decoration: none;
+    font-family: 'Bebas Neue', sans-serif;
+    color: #000;
+    font-size: 35px;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom:1px solid #ccc;
+    box-shadow: 0 2px 10px 0 #ccc;
+}
+
+.menu {
+    list-style: none;
+    float: left;
+}
+
+.menu li {
+    position: relative;
+    float: left;
+}
+
+.menu li a{
+    color: #333;
+    text-decoration: none;
+    padding: 5px 10px;
+    display: block;
+    font-size: 17px;
+}
+
+.menu li a:hover {
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 3px 10px 0 #ccc;
+    text-shadow: 0px 0px 5px #fff;
+}
+
+.menu li ul {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    background-color: #fff;
+    display: none;
+}
+
+.menu li:hover ul, .menu li.over ul{
+    display: block;
+}
+
+.menu li ul li {
+    
+    display: block;
+    width: 150px;
+}
+
+.btn_icon_header {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
