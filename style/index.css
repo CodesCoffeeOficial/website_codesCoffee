@@ -1,85 +1,107 @@
-/*Awesome imports*/
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+:root {
+    --color-white: #fff;
+    --color-dark1: #272727;
+    --color-dark2: #2d2d2d;
+    --color-dark3: #414141;
+    --color-dark4: #1c1c1c;
+    --color-dark5: #343434;
+    --color-purple: #b040ff;
+}
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-.logo {
-    text-decoration: none;
-    font-family: 'Bebas Neue', sans-serif;
-    color: #000;
-    font-size: 35px;
-}
-
-header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-bottom:1px solid #ccc;
-    box-shadow: 0 2px 10px 0 #ccc;
+.header {
+    background-color: var(--color-dark4);
     height: 60px;
 }
 
-.menu {
+.header,
+.navigation_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
     list-style: none;
-    float: left;
 }
 
-.menu li {
-    position: relative;
-    float: left;
-}
 
-.menu li a{
-    color: #333;
+.navigation_header li a {
+    color: var(--color-white);
     text-decoration: none;
     padding: 5px 10px;
     display: block;
-    font-size: 17px;
 }
 
-.menu li a:hover {
-    background-color: #333;
+.navigation_header li a:hover{
+    background-color: #000000;
     color: #fff;
-    box-shadow: 0 3px 10px 0 #ccc;
     text-shadow: 0px 0px 5px #fff;
 }
 
-.menu li ul {
+.navigation_header li ul {
     position: absolute;
     top: 25px;
-    left: 0;
+    left: 60%;
     background-color: #fff;
     display: none;
 }
 
-.menu li:hover ul, .menu li.over ul{
+.navigation_header li:hover ul, .navigation_header li.over ul {
     display: block;
 }
 
-.menu li ul li {
-    
+.navigation_header li ul li {
+    border: 1px solid #2d2d2d;
     display: block;
     width: 150px;
 }
 
-.btn_icon_header {
-    display: none;
+.active {
+    background-color: var(--color-dark3);
+    padding: 10px;
+    border-radius: 10px;
 }
 
-@media screen and(max-width:768px) {
-    header {
+.btn_icon_header {
+    display: none;
+    background-color: transparent;
+    border: none;
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .btn_icon_header {
+        display: block;
+    }
+    
+    .navigation_header {
         position: absolute;
         flex-direction: column;
+        border: 1px solid red;
         top: 0;
-        background-color: #ccc;
+        left: 0;
+        background-color: var(--color-purple);
         height: 100%;
-        width: 25vw;
+        width: 50%;
         padding: 1em;
+        animation-duration: 1s;
+        margin-left: -100vw;
+    }
+
+    .navigation_header li {
+        margin-left: 30px;
     }
 }
 
+@keyframes showSidebar {
+    from {margin-right: 100vw;}
+
+    to {margin-left: -10vw;}
+}
 
